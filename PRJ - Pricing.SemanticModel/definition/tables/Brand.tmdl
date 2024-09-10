@@ -1,0 +1,81 @@
+table Brand
+	lineageTag: 8c803b5e-5975-4763-b6ca-83469dbb1f43
+	sourceLineageTag: db0f2e93-e33c-4968-951f-f6be0c613275
+
+	column BRAND_CODE
+		dataType: string
+		isNullable: false
+		lineageTag: 2f6ac2d3-0b89-4f71-bd16-cfdae988b8f4
+		sourceLineageTag: 6f1d5be8-5982-4797-9b7a-04d0c51e380b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: BRAND_CODE
+
+		annotation SummarizationSetBy = User
+
+	column BRAND_DESC
+		dataType: string
+		lineageTag: 60989953-4f7e-46a6-9d60-315012ea163e
+		sourceLineageTag: 7cf5c990-962d-4de6-9b6d-3a454a627542
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: BRAND_DESC
+
+		annotation SummarizationSetBy = User
+
+	column BRAND_DESC_JP
+		dataType: string
+		lineageTag: 37d6cd30-786b-4cf6-9890-0fcd14ed2061
+		sourceLineageTag: 4477fd7a-4a6e-4c7f-b971-6c7c6174bee6
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: BRAND_DESC_JP
+
+		annotation SummarizationSetBy = User
+
+	column OWNER_CODE
+		dataType: string
+		lineageTag: 0decea3d-31d6-4c2e-911e-e60cd5032bf6
+		sourceLineageTag: 92975b3d-c514-42b5-a443-71ba27c46ec5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: OWNER_CODE
+
+		annotation SummarizationSetBy = User
+
+	column OWNER_NAME
+		dataType: string
+		lineageTag: 66845705-501f-4b7e-a1b9-615d6d8b133f
+		sourceLineageTag: 38c9bf7b-b678-4866-a10c-c84fa984e20f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: OWNER_NAME
+
+		annotation SummarizationSetBy = User
+
+	column PORTFOLIO
+		dataType: string
+		lineageTag: 2f4b1760-335e-4f17-ad1f-2fd8fd99e683
+		sourceLineageTag: 9a7bf556-7ccf-4f3d-a49e-efe50ff60e9e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PORTFOLIO
+
+		annotation SummarizationSetBy = User
+
+	column 'Brand Owner Portfolio'
+		dataType: string
+		lineageTag: 54e540d6-fb13-4e4e-ab32-e45fcaedbc65
+		sourceLineageTag: 131ee962-4e9a-44b3-bcda-b1170363fdb0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Brand Owner Portfolio
+
+		annotation SummarizationSetBy = User
+
+	partition Brand = entity
+		mode: directQuery
+		source
+			entityName: Brand
+			expressionSource: 'DirectQuery to AS - PRJ - Intage'
+

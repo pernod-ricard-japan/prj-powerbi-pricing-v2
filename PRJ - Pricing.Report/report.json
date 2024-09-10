@@ -1,0 +1,64 @@
+{
+  "config": "{\"version\":\"5.51\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU02\",\"version\":\"5.53\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"filterSortOrder\":3,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true,\"filterPaneHiddenInEditMode\":false},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}",
+  "filters": "[{\"name\":\"Filterbb77d79f1daff8e84b48\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Intage Facts\"}},\"Property\":\"SRI_OUTLET_TYPES\"}},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"isLockedInViewMode\":true,\"ordinal\":0},{\"name\":\"Filter4c246a10766502e00e11\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"JAN\"}},\"Property\":\"SIZE\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"j\",\"Entity\":\"JAN\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"j\"}},\"Property\":\"SIZE\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'550'\"}}],[{\"Literal\":{\"Value\":\"'600'\"}}],[{\"Literal\":{\"Value\":\"'620'\"}}],[{\"Literal\":{\"Value\":\"'640'\"}}],[{\"Literal\":{\"Value\":\"'660'\"}}],[{\"Literal\":{\"Value\":\"'700'\"}}],[{\"Literal\":{\"Value\":\"'720'\"}}],[{\"Literal\":{\"Value\":\"'750'\"}}],[{\"Literal\":{\"Value\":\"'500'\"}}]]}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{},\"ordinal\":1},{\"name\":\"Filter89203e3bd8970b7ebcd9\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Intage Facts\"}},\"Property\":\"CC_RSP\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"i\",\"Entity\":\"Intage Facts\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Not\":{\"Expression\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"CC_RSP\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"0D\"}}]]}}}}}]},\"type\":\"Categorical\",\"howCreated\":1,\"objects\":{\"general\":[{\"properties\":{\"isInvertedSelectionMode\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"ordinal\":2}]",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU02",
+            "path": "BaseThemes/CY24SU02.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "X - ReviewTab",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "07cc8c70da0edde18305",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"0c98eae1b0d026547c02\",\"layouts\":[{\"id\":0,\"position\":{\"x\":92.4941724941725,\"y\":44.75524475524475,\"z\":0,\"width\":1115.897435897436,\"height\":563.1701631701632,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Brand Quality.BQ_DESC\"},{\"queryRef\":\"Intage Facts.JAN_CODE\"},{\"queryRef\":\"Intage Facts.JAN_DESC\"},{\"queryRef\":\"Sum(Intage Facts.CC_RSP)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"i\",\"Entity\":\"Intage Facts\",\"Type\":0},{\"Name\":\"b\",\"Entity\":\"Brand Quality\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"JAN_CODE\"},\"Name\":\"Intage Facts.JAN_CODE\",\"NativeReferenceName\":\"JAN_CODE\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"JAN_DESC\"},\"Name\":\"Intage Facts.JAN_DESC\",\"NativeReferenceName\":\"JAN_DESC\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"CC_RSP\"}},\"Function\":0},\"Name\":\"Sum(Intage Facts.CC_RSP)\",\"NativeReferenceName\":\"Sum of CC_RSP\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"BQ_DESC\"},\"Name\":\"Brand Quality.BQ_DESC\",\"NativeReferenceName\":\"BQ_DESC\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 563.17,
+          "width": 1115.90,
+          "x": 92.49,
+          "y": 44.76,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"objects\":{\"outspacePane\":[{\"properties\":{\"width\":{\"expr\":{\"Literal\":{\"Value\":\"307L\"}}}}}]}}",
+      "displayName": "1 - Intage RSP per BQ",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "77043cdda56b376cc9f8",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"705cfe800b7279e4ed3a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":164.50428396572826,\"z\":0,\"width\":1280,\"height\":549.9143206854345,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Brand Quality.LVL2_SEGMENT\"},{\"queryRef\":\"Brand Quality.LVL3_TYPE\"},{\"queryRef\":\"Brand Quality.BQ_DESC\"},{\"queryRef\":\"Brand Quality.BQ_CODE\"},{\"queryRef\":\"Intage Facts.JAN_CODE\"},{\"queryRef\":\"Sum(Intage Facts.MARKET_SIZE_UNIT)\"},{\"queryRef\":\"Intage Facts.INTAGE_RSP_2021_L3M\"},{\"queryRef\":\"Intage Facts.INTAGE_RSP_2022_L3M\"},{\"queryRef\":\"Intage Facts.INTAGE_RSP_2024_L3M\"},{\"queryRef\":\"Intage Facts.CM_Weighted_Avg_RSP\"},{\"queryRef\":\"Intage Facts.INTAGE_BQ_RSP_2024-06_L3M\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"b\",\"Entity\":\"Brand Quality\",\"Type\":0},{\"Name\":\"i\",\"Entity\":\"Intage Facts\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"LVL2_SEGMENT\"},\"Name\":\"Brand Quality.LVL2_SEGMENT\",\"NativeReferenceName\":\"LVL2_SEGMENT\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"LVL3_TYPE\"},\"Name\":\"Brand Quality.LVL3_TYPE\",\"NativeReferenceName\":\"LVL3_TYPE\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"BQ_DESC\"},\"Name\":\"Brand Quality.BQ_DESC\",\"NativeReferenceName\":\"BQ_DESC\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"BQ_CODE\"},\"Name\":\"Brand Quality.BQ_CODE\",\"NativeReferenceName\":\"BQ_CODE\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"JAN_CODE\"},\"Name\":\"Intage Facts.JAN_CODE\",\"NativeReferenceName\":\"JAN_CODE\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"INTAGE_JAN_RSP_2021_L3M\"},\"Name\":\"Intage Facts.INTAGE_RSP_2021_L3M\",\"NativeReferenceName\":\"INTAGE_JAN_RSP_2021_L3M\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"INTAGE_JAN_RSP_2022_L3M\"},\"Name\":\"Intage Facts.INTAGE_RSP_2022_L3M\",\"NativeReferenceName\":\"INTAGE_JAN_RSP_2022_L3M\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"INTAGE_JAN_RSP_2024_L3M\"},\"Name\":\"Intage Facts.INTAGE_RSP_2024_L3M\",\"NativeReferenceName\":\"INTAGE_JAN_RSP_2024_L3M\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"INTAGE_BQ_RSP_2022-06_L3M\"},\"Name\":\"Intage Facts.CM_Weighted_Avg_RSP\",\"NativeReferenceName\":\"INTAGE_BQ_RSP_2022-06_L3M\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"MARKET_SIZE_UNIT\"}},\"Function\":0},\"Name\":\"Sum(Intage Facts.MARKET_SIZE_UNIT)\",\"NativeReferenceName\":\"Sum of MARKET_SIZE_UNIT\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"INTAGE_BQ_RSP_2024-06_L3M\"},\"Name\":\"Intage Facts.INTAGE_BQ_RSP_2024-06_L3M\",\"NativeReferenceName\":\"INTAGE_BQ_RSP_2024-06_L3M\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"b\"}},\"Property\":\"BQ_DESC\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"columnWidth\":[{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"105.96409108647954D\"}}}},\"selector\":{\"metadata\":\"Brand Quality.LVL3_TYPE\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"223.9389994819239D\"}}}},\"selector\":{\"metadata\":\"Brand Quality.BQ_DESC\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"90.45875517019377D\"}}}},\"selector\":{\"metadata\":\"Intage Facts.CM_RSP_MEASURE\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"156.56496161493163D\"}}}},\"selector\":{\"metadata\":\"Intage Facts.INTAGE_RSP_2022_L3M\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"71.66666666666667D\"}}}},\"selector\":{\"metadata\":\"Brand Quality.BQ_CODE\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"100.33334067655713D\"}}}},\"selector\":{\"metadata\":\"Intage Facts.INTAGE_RSP_2020_L3M\"}},{\"properties\":{\"value\":{\"expr\":{\"Literal\":{\"Value\":\"161.5230102720133D\"}}}},\"selector\":{\"metadata\":\"Intage Facts.INTAGE_RSP_2024_L3M\"}},{\"properties\":{},\"selector\":{\"metadata\":\"Intage Facts.INTAGE_RSP_2021_L3M\"}},{\"properties\":{},\"selector\":{\"metadata\":\"Brand Quality.LVL2_SEGMENT\"}}],\"total\":[{\"properties\":{\"totals\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"general\":[{\"properties\":{}}],\"columnHeaders\":[{\"properties\":{\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Left'\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}},\"backColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}}}}],\"values\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}},\"backColorSecondary\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#F1F1F1'\"}}}}}}}]},\"vcObjects\":{\"stylePreset\":[{\"properties\":{\"name\":{\"expr\":{\"Literal\":{\"Value\":\"'Minimal'\"}}}}}],\"dropShadow\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 549.91,
+          "width": 1280.00,
+          "x": 0.00,
+          "y": 164.50,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}
