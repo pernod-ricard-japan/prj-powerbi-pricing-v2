@@ -20,7 +20,6 @@ ref table LocalDateTable_f6435cb2-26a7-4ce3-9375-8eef3878613c
 ref table JAN
 ref table 'Brand Quality'
 ref table Brand
-ref table 'Vol-Val Selection'
 ref table LocalDateTable_3129bc54-fe13-41f0-9de8-96e85d079553
 
 ref cultureInfo en-US

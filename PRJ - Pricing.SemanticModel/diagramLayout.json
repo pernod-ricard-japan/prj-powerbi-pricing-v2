@@ -4,48 +4,48 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 0,
-        "y": 0
+        "x": 702.5,
+        "y": 283.75
       },
       "nodes": [
         {
           "location": {
-            "x": 2000.6909093634213,
-            "y": 1285.1113333333328
+            "x": 2745.6909093634217,
+            "y": 781.77799999999945
           },
           "nodeIndex": "Brand",
           "nodeLineageTag": "8c803b5e-5975-4763-b6ca-83469dbb1f43",
           "size": {
-            "height": 217.38700000000006,
+            "height": 302.05366666666669,
             "width": 234
           },
-          "zIndex": 12
+          "zIndex": 1
         },
         {
           "location": {
-            "x": 1995.2428874220122,
-            "y": 954.05212800392633
+            "x": 2440.2428874220118,
+            "y": 955.718794670593
           },
           "nodeIndex": "Brand Quality",
           "nodeLineageTag": "10a7bcc0-1294-4430-bb49-d70836b550be",
           "size": {
-            "height": 300,
+            "height": 510.08333333333337,
             "width": 234
           },
-          "zIndex": 13
+          "zIndex": 2
         },
         {
           "location": {
-            "x": 1828.2393370707866,
-            "y": 294.99999999999994
+            "x": 1081.5726704041201,
+            "y": 738.33333333333326
           },
           "nodeIndex": "Calendar",
           "nodeLineageTag": "3e812f4c-dfc0-4dac-9cd3-436616c02a87",
           "size": {
-            "height": 150.6513540631131,
+            "height": 603.6513540631131,
             "width": 298.10628251075406
           },
-          "zIndex": 18
+          "zIndex": 4
         },
         {
           "location": {
@@ -55,42 +55,29 @@
           "nodeIndex": "Intage Facts",
           "nodeLineageTag": "b2760d26-24cf-4308-abdb-fa4823f742cd",
           "size": {
-            "height": 300,
+            "height": 999.66666666666674,
             "width": 234
           },
-          "zIndex": 17
+          "zIndex": 5
         },
         {
           "location": {
-            "x": 1992.347967039618,
-            "y": 734.83105822327968
+            "x": 2005.681300372951,
+            "y": 1171.4977248899463
           },
           "nodeIndex": "JAN",
           "nodeLineageTag": "9ce8afde-806f-47d1-8629-ac91f176766d",
           "size": {
-            "height": 176,
+            "height": 202.33333333333326,
             "width": 234
           },
-          "zIndex": 16
-        },
-        {
-          "location": {
-            "x": 355.52278208125904,
-            "y": 1521.585509442009
-          },
-          "nodeIndex": "Vol-Val Selection",
-          "nodeLineageTag": "8f606d38-923a-4628-877b-0871fecc08ff",
-          "size": {
-            "height": 128,
-            "width": 234
-          },
-          "zIndex": 10
+          "zIndex": 3
         }
       ],
       "name": "All tables",
-      "zoomValue": 60,
-      "pinKeyFieldsToTop": false,
-      "showExtraHeaderInfo": false,
+      "zoomValue": 80,
+      "pinKeyFieldsToTop": true,
+      "showExtraHeaderInfo": true,
       "hideKeyFieldsWhenCollapsed": false,
       "tablesLocked": false
     }

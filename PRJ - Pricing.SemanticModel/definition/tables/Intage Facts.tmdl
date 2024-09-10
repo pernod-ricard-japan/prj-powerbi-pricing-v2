@@ -18,27 +18,6 @@ table 'Intage Facts'
 
 		annotation PBI_FormatHint = {"currencyCulture":"ja-JP"}
 
-	measure INTAGE_BQ_RSP_2022-06_L3M = ```
-			
-			VAR marketunit = CALCULATE(SUM('Intage Facts'[UNIT_ROLLING_3M]),   
-			    TREATAS(VALUES('JAN'[BQ_CODE]),'JAN'[BQ_CODE]),
-			    'Intage Facts'[YEAR]=2022,'Intage Facts'[MONTH]=6)
-			
-			VAR marketvalue = CALCULATE(SUM('Intage Facts'[VALUE_ROLLING_3M]),
-			    TREATAS(VALUES('JAN'[BQ_CODE]),'JAN'[BQ_CODE]),
-			    'Intage Facts'[YEAR]=2022,'Intage Facts'[MONTH]=6)
-			
-			
-			RETURN DIVIDE(marketvalue, marketunit, 0)
-			```
-		lineageTag: d9395e0e-ab3c-4c79-985c-685f14c6b452
-
-		changedProperty = Name
-
-		changedProperty = FormatString
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	measure CM_Total_Volume_Per_JAN_Per_Month = ```
 			
 			CALCULATE(
@@ -59,46 +38,47 @@ table 'Intage Facts'
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure CM_TEST_Weighed_average =
+	measure INTAGE_BQ_RSP_2022-06_L3M = ```
 			
-			
-			[INTAGE_JAN_RSP_2024_L3M]*
-			[CM_Total_Volume_Per_JAN_Per_Month]/
-			
-			CALCULATE(
-			    SUM('Intage Facts'[MARKET_SIZE_CASE_9LITERS]),
-			    TREATAS(VALUES('JAN'[BQ_CODE]),'JAN'[BQ_CODE]),
-			    ALLEXCEPT('Intage Facts','Intage Facts'[JAN_CODE],'Intage Facts'[DATE]
-			        )   )
-		formatString: "¥"#,0.00;-"¥"#,0.00;"¥"#,0.00
-		lineageTag: ba591076-327e-4733-bfb2-58d75d1f1b54
-
-		changedProperty = Name
-
-		changedProperty = FormatString
-
-		annotation PBI_FormatHint = {"currencyCulture":"ja-JP"}
-
-	measure CM_test_volume_bq = ```
-			
-			CALCULATE(
-			    SUM('Intage Facts'[MARKET_SIZE_CASE_9LITERS]),
-			    ALLEXCEPT('Intage Facts', 'Intage Facts'[JAN_CODE], 'Intage Facts'[DATE]),
-			    TREATAS(VALUES('JAN'[BQ_CODE]), 'JAN'[BQ_CODE])
-			)
-			
-			```
-		lineageTag: d3bf3a3a-298e-41da-92d4-aa108f40f12b
-
-		changedProperty = Name
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure INTAGE_JAN_RSP_2022_L3M = ```
-			
-			VAR marketunit = CALCULATE(SUM('Intage Facts'[UNIT_ROLLING_3M]),'Intage Facts'[YEAR]=2022,'Intage Facts'[MONTH]=6)
-			VAR marketvalue = CALCULATE(SUM('Intage Facts'[VALUE_ROLLING_3M]),'Intage Facts'[YEAR]=2022,'Intage Facts'[MONTH]=6)
-			RETURN DIVIDE(marketvalue, marketunit, 0)
+			VAR MostRecentMonth = [A_MostRecentValidMonthBeforeJune2022]
+			VAR MarketUnit =
+			    CALCULATE(
+			        SUM('Intage Facts'[UNIT_ROLLING_3M]),
+			        TREATAS(
+			            VALUES('JAN'[BQ_CODE]),
+			            'JAN'[BQ_CODE]
+			        ),
+			        FILTER(
+			            ALL('Intage Facts'),
+			            'Intage Facts'[YEAR] = YEAR(MostRecentMonth) &&
+			            'Intage Facts'[MONTH] = MONTH(MostRecentMonth)
+			        ),
+			        ALLEXCEPT(
+			            'Intage Facts',
+			            'Intage Facts'[JAN_CODE],
+			            'Intage Facts'[DATE]
+			        )
+			    )
+			VAR MarketValue =
+			    CALCULATE(
+			        SUM('Intage Facts'[VALUE_ROLLING_3M]),
+			        TREATAS(
+			            VALUES('JAN'[BQ_CODE]),
+			            'JAN'[BQ_CODE]
+			        ),
+			        FILTER(
+			            ALL('Intage Facts'),
+			            'Intage Facts'[YEAR] = YEAR(MostRecentMonth) &&
+			            'Intage Facts'[MONTH] = MONTH(MostRecentMonth)
+			        ),
+			        ALLEXCEPT(
+			            'Intage Facts',
+			            'Intage Facts'[JAN_CODE],
+			            'Intage Facts'[DATE]
+			        )
+			    )
+			RETURN
+			    DIVIDE(MarketValue, MarketUnit, 0)
 			
 			```
 		formatString: "¥"#,0.0;-"¥"#,0.0;"¥"#,0.0
@@ -128,22 +108,185 @@ table 'Intage Facts'
 
 	measure INTAGE_BQ_RSP_2024-06_L3M = ```
 			
-			VAR marketunit = CALCULATE(SUM('Intage Facts'[UNIT_ROLLING_3M]),   
-			    TREATAS(VALUES('JAN'[BQ_CODE]),'JAN'[BQ_CODE]),
-			    'Intage Facts'[YEAR]=2024,'Intage Facts'[MONTH]=6)
+			VAR MostRecentMonth = [A_MostRecentValidMonthPerJAN_BQ]
+			VAR MarketUnit =
+			    CALCULATE(
+			        SUM('Intage Facts'[UNIT_ROLLING_3M]),
+			        TREATAS(
+			            VALUES('JAN'[BQ_CODE]),
+			            'JAN'[BQ_CODE]
+			        ),
+			        FILTER(
+			            ALL('Intage Facts'),
+			            'Intage Facts'[YEAR] = YEAR(MostRecentMonth) &&
+			            'Intage Facts'[MONTH] = MONTH(MostRecentMonth)
+			        ),
+			        ALLEXCEPT(
+			            'Intage Facts',
+			            'Intage Facts'[JAN_CODE],
+			            'Intage Facts'[DATE]
+			        )
+			    )
+			VAR MarketValue =
+			    CALCULATE(
+			        SUM('Intage Facts'[VALUE_ROLLING_3M]),
+			        TREATAS(
+			            VALUES('JAN'[BQ_CODE]),
+			            'JAN'[BQ_CODE]
+			        ),
+			        FILTER(
+			            ALL('Intage Facts'),
+			            'Intage Facts'[YEAR] = YEAR(MostRecentMonth) &&
+			            'Intage Facts'[MONTH] = MONTH(MostRecentMonth)
+			        ),
+			        ALLEXCEPT(
+			            'Intage Facts',
+			            'Intage Facts'[JAN_CODE],
+			            'Intage Facts'[DATE]
+			        )
+			    )
+			RETURN
+			    DIVIDE(MarketValue, MarketUnit, 0)
 			
-			VAR marketvalue = CALCULATE(SUM('Intage Facts'[VALUE_ROLLING_3M]),
-			    TREATAS(VALUES('JAN'[BQ_CODE]),'JAN'[BQ_CODE]),
-			    'Intage Facts'[YEAR]=2024,'Intage Facts'[MONTH]=6)
-			
-			
-			RETURN DIVIDE(marketvalue, marketunit, 0)
 			```
 		lineageTag: 97c1910f-09f6-43bb-a90e-0942437e65b8
 
 		changedProperty = Name
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure TEST_MarketValue = ```
+			
+			CALCULATE(SUM('Intage Facts'[VALUE_ROLLING_3M]),   
+			    TREATAS(VALUES('JAN'[BQ_CODE]),'JAN'[BQ_CODE]),
+			    'Intage Facts'[YEAR]=2024,'Intage Facts'[MONTH]=6,
+			    ALLEXCEPT('Intage Facts','Intage Facts'[JAN_CODE],'Intage Facts'[DATE]))
+			```
+		lineageTag: 35a7c8aa-894c-4601-a30a-4ea84edd7b8a
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure TEST_MarketUnit = ```
+			
+			CALCULATE(SUM('Intage Facts'[UNIT_ROLLING_3M]),   
+			    TREATAS(VALUES('JAN'[BQ_CODE]),'JAN'[BQ_CODE]),
+			    'Intage Facts'[YEAR]=2024,'Intage Facts'[MONTH]=6,
+			    ALLEXCEPT('Intage Facts','Intage Facts'[JAN_CODE],'Intage Facts'[DATE]))
+			```
+		lineageTag: 542e7344-ebd1-442e-899a-ef483d355cf8
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure A_MostRecentValidMonthPerJAN_BQ =
+			
+			VAR CurrentJAN = MAX('Intage Facts'[JAN_Code])
+			VAR CurrentBQ = MAX('JAN'[BQ_CODE])
+			VAR RecentMonth =
+			    CALCULATE(
+			        MAX('Intage Facts'[DATE]),
+			        FILTER(
+			            ALL('Intage Facts'),
+			            'Intage Facts'[JAN_Code] = CurrentJAN &&
+			            [UNIT_ROLLING_3M] <> 0
+			        )
+			    )
+			RETURN
+			    RecentMonth
+		formatString: General Date
+		lineageTag: cc00b63a-5374-42f0-90a5-14d833462256
+
+		changedProperty = Name
+
+	measure A_TotalVolumePerBQ =
+			
+			CALCULATE(
+			    SUM('Intage Facts'[MARKET_SIZE_CASE_9LITERS]),
+			    TREATAS(
+			        VALUES('JAN'[BQ_CODE]),
+			        'JAN'[BQ_CODE]
+			    )
+			)
+		lineageTag: 725d00f8-82fc-44df-963a-b47e53a0082d
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure A_TEST = ```
+			
+			VAR LastDatePerJAN = 
+			    CALCULATE(
+			        MAX('Intage Facts'[DATE]), 
+			        ALLEXCEPT('Intage Facts', 'Intage Facts'[JAN_Code])
+			    )
+			
+			VAR Last3Months =
+			    DATESINPERIOD(
+			        'Intage Facts'[DATE], 
+			        LastDatePerJAN, 
+			        -3, 
+			        MONTH
+			    )
+			
+			VAR TotalVolumePerBQ =
+			    CALCULATE(
+			        SUM('Intage Facts'[MARKET_SIZE_CASE_9LITERS]),
+			        TREATAS(
+			            VALUES('JAN'[BQ_CODE]),
+			            'JAN'[BQ_CODE]
+			        ),
+			        ALLEXCEPT('Intage Facts', 'Intage Facts'[DATE]),
+			        Last3Months
+			    )
+			
+			VAR WeightedSumRSP =
+			    CALCULATE(
+			        SUMX(
+			            'Intage Facts',
+			            'Intage Facts'[CC_RSP] * 'Intage Facts'[MARKET_SIZE_CASE_9LITERS]
+			        ),
+			        TREATAS(
+			            VALUES('JAN'[BQ_CODE]),
+			            'JAN'[BQ_CODE]
+			        ),
+			        ALLEXCEPT('Intage Facts', 'Intage Facts'[DATE]),
+			        Last3Months
+			    )
+			
+			RETURN
+			DIVIDE(WeightedSumRSP, TotalVolumePerBQ, 0)
+			
+			
+			```
+		lineageTag: 7b7dc32b-05d5-402e-af1d-7edfe5e96c94
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure A_MostRecentValidMonthBeforeJune2022 = ```
+			
+			VAR MostRecentMonthBefore2022 =
+			    CALCULATE(
+			        MAX('Intage Facts'[DATE]),
+			        FILTER(
+			            ALL('Intage Facts'),
+			            'Intage Facts'[DATE] < DATE(2022, 6, 1) &&
+			            [UNIT_ROLLING_3M] <> 0
+			        )
+			    )
+			RETURN
+			    MostRecentMonthBefore2022
+			
+			```
+		formatString: General Date
+		lineageTag: 5812145e-2066-4eef-ac4b-db59112111c7
+
+		changedProperty = Name
 
 	column DATE
 		dataType: dateTime
