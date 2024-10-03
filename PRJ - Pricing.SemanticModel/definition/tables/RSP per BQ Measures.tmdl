@@ -1,0 +1,27 @@
+table 'RSP per BQ Measures'
+	lineageTag: a881cad6-cfe3-4b10-bf92-da2b458fe28b
+
+	measure Intage_RSP_Selection =
+			SWITCH(SELECTEDVALUE('RSP Range Selection'[RSP Range]),
+			"This Month",CALCULATE(SUM('RSP per BQ'[WEIGHTED_RSP_THIS_MONTH])),
+			"L3M",CALCULATE(SUM('RSP per BQ'[WEIGHTED_RSP_L3M])),
+			"L6M",CALCULATE(SUM('RSP per BQ'[WEIGHTED_RSP_L6M])),
+			"L12M",CALCULATE(SUM('RSP per BQ'[WEIGHTED_RSP_L12M])))
+		lineageTag: e5eb0aee-a9fc-4c19-9b8c-c170411cd712
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'RSP per BQ Measures' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	changedProperty = Name
+
+	annotation PBI_ResultType = Table
+

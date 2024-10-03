@@ -1,0 +1,75 @@
+table 'Price Index Master'
+	lineageTag: 96179838-9086-48c7-a5d2-f707b7799273
+
+	column BQ_Code_Baseline
+		dataType: string
+		lineageTag: 24fbf03c-3997-48d9-b0b4-843b05bdd9a6
+		summarizeBy: none
+		sourceColumn: BQ_Code_Baseline
+
+		annotation SummarizationSetBy = Automatic
+
+	column BQ_Desc_Baseline
+		dataType: string
+		lineageTag: ee6579d3-b9d5-4912-a3ed-a9ee8b7ca12b
+		summarizeBy: none
+		sourceColumn: BQ_Desc_Baseline
+
+		annotation SummarizationSetBy = Automatic
+
+	column Index
+		dataType: int64
+		formatString: 0
+		lineageTag: 4e9d9d1f-24b2-4708-b6dc-367c99939027
+		summarizeBy: sum
+		sourceColumn: Index
+
+		annotation SummarizationSetBy = Automatic
+
+	column BQ_Code_Benchmark
+		dataType: string
+		lineageTag: 7bbe0c2f-d247-4f5b-ac59-4cf507319565
+		summarizeBy: none
+		sourceColumn: BQ_Code_Benchmark
+
+		annotation SummarizationSetBy = Automatic
+
+	column BQ_Desc_Benchmark
+		dataType: string
+		lineageTag: d262a82b-b59f-4fb5-973d-052465caf8b1
+		summarizeBy: none
+		sourceColumn: BQ_Desc_Benchmark
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Effective date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 41def7b0-f128-4fc7-8268-0e2cf9b99225
+		summarizeBy: none
+		sourceColumn: Effective date
+
+		variation Variation
+			isDefault
+			relationship: d66f3179-38a1-49c1-8cb5-76d484cf28cf
+			defaultHierarchy: LocalDateTable_6f5c8e67-9acc-413e-b2f3-0820b06a0821.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition 'Price Index Master' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\cw022146\OneDrive - PERNOD RICARD\Desktop\Github Local clpernod\prj-powerbi-pricing-v2\Price_Index_Master_v0.xlsx"), null, true),
+				    #"Price Index Master_Sheet" = Source{[Item="Price Index Master",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Price Index Master_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"BQ_Code_Baseline", type text}, {"BQ_Desc_Baseline", type text}, {"Index", Int64.Type}, {"BQ_Code_Benchmark", type text}, {"BQ_Desc_Benchmark", type text}, {"Effective date", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,37 @@
+table 'RSP Range Selection'
+	lineageTag: b56b0974-01e9-4eff-bd15-f5e388902991
+
+	column 'RSP Range'
+		dataType: string
+		lineageTag: be248e57-488e-4f2c-9e4d-856922e7e5b7
+		summarizeBy: none
+		sourceColumn: RSP Range
+		sortByColumn: 'RSP Months'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'RSP Months'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5b6ece62-342b-4fcd-8ebe-c2758ba494ab
+		summarizeBy: sum
+		sourceColumn: RSP Months
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'RSP Range Selection' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i45WCsnILFbIzc8ryVDSUTJUitWJVvIx9gWyjSFsMxDbDMI2NAJxDI2UYmMB", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t, Column2 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}, {"Column2", Int64.Type}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Column1", "RSP Range"}, {"Column2", "RSP Months"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+

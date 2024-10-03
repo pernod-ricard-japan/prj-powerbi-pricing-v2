@@ -6,11 +6,11 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["DirectQuery to AS - PRJ - Intage","ACCOUNT_SF_ASIA","WAREHOUSE_SF_ASIA","ROLE_SF_ASIA","DATABASE_SF_ASIA"]
+annotation PBI_QueryOrder = ["DirectQuery to AS - PRJ - Intage","ACCOUNT_SF_ASIA","WAREHOUSE_SF_ASIA","ROLE_SF_ASIA","DATABASE_SF_ASIA","RSP per BQ","Price Index Master","RSP per BQ Measures","RSP Range Selection"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBIDesktopVersion = 2.132.1053.0 (24.08)
+annotation PBIDesktopVersion = 2.136.1202.0 (24.09)
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -21,6 +21,13 @@ ref table JAN
 ref table 'Brand Quality'
 ref table Brand
 ref table LocalDateTable_3129bc54-fe13-41f0-9de8-96e85d079553
+ref table 'RSP per BQ'
+ref table DateTableTemplate_f6cabefb-3e6c-4644-b5a3-acbb0655fac7
+ref table LocalDateTable_407165de-618a-4063-914f-4391b873abde
+ref table 'Price Index Master'
+ref table LocalDateTable_6f5c8e67-9acc-413e-b2f3-0820b06a0821
+ref table 'RSP per BQ Measures'
+ref table 'RSP Range Selection'
 
 ref cultureInfo en-US
 

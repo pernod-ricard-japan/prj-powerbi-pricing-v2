@@ -4,14 +4,14 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 856.25,
-        "y": 530
+        "x": 702.19090936342172,
+        "y": 1502.5
       },
       "nodes": [
         {
           "location": {
             "x": 2745.6909093634217,
-            "y": 781.77799999999945
+            "y": 4835.491670554411
           },
           "nodeIndex": "Brand",
           "nodeLineageTag": "8c803b5e-5975-4763-b6ca-83469dbb1f43",
@@ -19,12 +19,12 @@
             "height": 302.05366666666669,
             "width": 234
           },
-          "zIndex": 1
+          "zIndex": 2
         },
         {
           "location": {
-            "x": 2440.2428874220118,
-            "y": 955.718794670593
+            "x": 2351.4928874220118,
+            "y": 4995.6824652250043
           },
           "nodeIndex": "Brand Quality",
           "nodeLineageTag": "10a7bcc0-1294-4430-bb49-d70836b550be",
@@ -32,12 +32,12 @@
             "height": 510.08333333333337,
             "width": 234
           },
-          "zIndex": 2
+          "zIndex": 6
         },
         {
           "location": {
             "x": 1081.5726704041201,
-            "y": 738.33333333333326
+            "y": 4792.0470038877447
           },
           "nodeIndex": "Calendar",
           "nodeLineageTag": "3e812f4c-dfc0-4dac-9cd3-436616c02a87",
@@ -45,12 +45,12 @@
             "height": 603.6513540631131,
             "width": 298.10628251075406
           },
-          "zIndex": 4
+          "zIndex": 5
         },
         {
           "location": {
             "x": 1563.1848328146741,
-            "y": 599.22724455298919
+            "y": 4652.9409151074005
           },
           "nodeIndex": "Intage Facts",
           "nodeLineageTag": "b2760d26-24cf-4308-abdb-fa4823f742cd",
@@ -58,12 +58,12 @@
             "height": 999.66666666666674,
             "width": 234
           },
-          "zIndex": 5
+          "zIndex": 4
         },
         {
           "location": {
             "x": 2005.681300372951,
-            "y": 1171.4977248899463
+            "y": 5225.2113954443585
           },
           "nodeIndex": "JAN",
           "nodeLineageTag": "9ce8afde-806f-47d1-8629-ac91f176766d",
@@ -72,6 +72,57 @@
             "width": 234
           },
           "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 2014.3682389593014,
+            "y": 4263.93338161125
+          },
+          "nodeIndex": "RSP per BQ",
+          "nodeLineageTag": "1f0fdb7b-97aa-489c-8df5-aba879681849",
+          "size": {
+            "height": 736.25,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 2488.1182389593014,
+            "y": 4268.8917149445842
+          },
+          "nodeIndex": "Price Index Master",
+          "nodeLineageTag": "96179838-9086-48c7-a5d2-f707b7799273",
+          "size": {
+            "height": 495.25,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 1948.1182389593016,
+            "y": 2653.2620065094898
+          },
+          "nodeIndex": "RSP per BQ Measures",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1948.1182389593016,
+            "y": 2320.0934564687855
+          },
+          "nodeIndex": "RSP Range Selection",
+          "nodeLineageTag": "b56b0974-01e9-4eff-bd15-f5e388902991",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
         }
       ],
       "name": "All tables",

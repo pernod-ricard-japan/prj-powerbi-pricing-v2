@@ -24,3 +24,43 @@ relationship 55d7e490-42f2-4423-8fcd-a406300d57ad
 	fromColumn: 'Brand Quality'.BRAND_CODE
 	toColumn: Brand.BRAND_CODE
 
+relationship 3dc988eb-2804-4214-a720-82dfa305ecbc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'RSP per BQ'.DATE
+	toColumn: LocalDateTable_407165de-618a-4063-914f-4391b873abde.Date
+
+relationship a0723611-3326-75d6-763e-2a9e4f777b96
+	securityFilteringBehavior: none
+	fromColumn: 'RSP per BQ'.BQ_CODE
+	toColumn: 'Brand Quality'.BQ_CODE
+
+relationship d66f3179-38a1-49c1-8cb5-76d484cf28cf
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Price Index Master'.'Effective date'
+	toColumn: LocalDateTable_6f5c8e67-9acc-413e-b2f3-0820b06a0821.Date
+
+relationship 1c1cc2f3-e8b4-7d4c-1d97-944ca5b1af9a
+	crossFilteringBehavior: bothDirections
+	securityFilteringBehavior: none
+	fromCardinality: one
+	fromColumn: 'Price Index Master'.BQ_Code_Baseline
+	toColumn: 'Brand Quality'.BQ_CODE
+
+relationship 94b5fe4b-1318-1a9d-8adf-a4aaea136f24
+	isActive: false
+	fromColumn: 'RSP per BQ'.BQ_CODE
+	toColumn: 'Price Index Master'.BQ_Code_Baseline
+
+relationship 88673b2e-6998-cb56-7edd-53195116a5b6
+	isActive: false
+	securityFilteringBehavior: none
+	fromColumn: 'Price Index Master'.BQ_Code_Benchmark
+	toColumn: 'Brand Quality'.BQ_CODE
+
+relationship 7819edc3-268e-46ed-24b8-e9a23f86c369
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'Price Index Master'.BQ_Code_Benchmark
+	toColumn: 'RSP per BQ'.BQ_CODE
+
