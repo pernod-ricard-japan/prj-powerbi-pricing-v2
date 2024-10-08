@@ -1,0 +1,84 @@
+table 'RSP per BQ Measures'
+	lineageTag: a881cad6-cfe3-4b10-bf92-da2b458fe28b
+
+	measure Intage_RSP_Selection =
+			SWITCH(SELECTEDVALUE('RSP Range Selection'[RSP Range]),
+			"This Month",CALCULATE(SUM('RSP per BQ'[WEIGHTED_RSP_THIS_MONTH])),
+			"L3M",CALCULATE(SUM('RSP per BQ'[WEIGHTED_RSP_L3M])),
+			"L6M",CALCULATE(SUM('RSP per BQ'[WEIGHTED_RSP_L6M])),
+			"L12M",CALCULATE(SUM('RSP per BQ'[WEIGHTED_RSP_L12M])))
+		lineageTag: e5eb0aee-a9fc-4c19-9b8c-c170411cd712
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Current_Index = ```
+			
+			-- Get the selected BQ description for Baseline
+			VAR SelectedBaselineBQDesc = SELECTEDVALUE('Brand Quality'[BQ_DESC])
+			-- Get the selected BQ description for Benchmark
+			VAR SelectedBenchmarkBQDesc = SELECTEDVALUE('Price Index Master'[BQ_Desc_Benchmark])
+			
+			-- Lookup the BQ_Code for the selected Baseline BQ description
+			VAR BaselineBQCode = 
+			    CALCULATE(
+			        MAX('Brand Quality'[BQ_Code]),
+			        'Brand Quality'[BQ_DESC] = SelectedBaselineBQDesc
+			    )
+			
+			-- Lookup the BQ_Code for the selected Benchmark BQ description
+			VAR BenchmarkBQCode = 
+			    CALCULATE(
+			        MAX('Price Index Master'[BQ_Code_Benchmark]),
+			        'Price Index Master'[BQ_Desc_Benchmark] = SelectedBenchmarkBQDesc
+			    )
+			
+			-- Calculate Baseline RSP based on the corresponding BQ Code
+			VAR BaselineRSP = 
+			    CALCULATE(
+			        SUM('RSP per BQ'[WEIGHTED_RSP_L3M]), 
+			        'RSP per BQ'[BQ_Code] = BaselineBQCode
+			    )
+			
+			-- Calculate Benchmark RSP based on the corresponding BQ Code
+			VAR BenchmarkRSP = 
+			    CALCULATE(
+			        SUM('RSP per BQ'[WEIGHTED_RSP_L3M]), 
+			        'RSP per BQ'[BQ_Code] = BenchmarkBQCode
+			    )
+			
+			-- Return the ratio of Baseline RSP to Benchmark RSP as a percentage
+			RETURN
+			IF(
+			    NOT ISBLANK(BaselineRSP) && NOT ISBLANK(BenchmarkRSP),
+			    BaselineRSP / BenchmarkRSP * 100,
+			    BLANK()
+			)
+			
+			```
+		lineageTag: f5a8af5d-1e17-4d11-ba55-f59dde8d3b43
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Current_Index_Debug = ```
+			
+			VAR SelectedBaselineBQ = SELECTEDVALUE('RSP per BQ'[BQ_DESC])
+			VAR SelectedBenchmarkBQ = SELECTEDVALUE('Price Index Master'[BQ_Desc_Benchmark])
+			
+			RETURN
+			"Baseline: " & SelectedBaselineBQ & " | Benchmark: " & SelectedBenchmarkBQ
+			
+			```
+		lineageTag: 2e13560d-374e-45f3-b4f7-2def1c915e74
+
+	partition 'RSP per BQ Measures' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

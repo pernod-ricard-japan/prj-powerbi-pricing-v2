@@ -1,0 +1,41 @@
+expression 'DirectQuery to AS - PRJ - Intage' =
+		let
+		    Source = AnalysisServices.Database("powerbi://api.powerbi.com/v1.0/myorg/PR%20Japan%20-%20Marketing%20%28DEV%29", "PRJ - Intage"),
+		    Cubes = Table.Combine(Source[Data]),
+		    Cube = Cubes{[Id="Model", Kind="Cube"]}[Data]
+		in
+		    Cube
+	lineageTag: 61664eed-2df5-4955-8db1-7d27ca012cdc
+
+	annotation PBI_IncludeFutureArtifacts = True
+
+	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"fa3792fe-1972-4a98-b13b-814aeef648d9"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"6491dadc-1788-4820-8775-3d443053c3b1"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"3ccf46f1-ce48-47a6-b831-feb9b47d530e"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"900a6abb-5477-4cc4-a081-2eef5d923fbd"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"38e01a79-bad8-4d18-a283-211db04f41bf"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"b1c755f2-1e2e-48ac-928f-d9100e559862"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"77fed137-31d8-467e-982b-963ba80b693b"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"db5e9d9f-cb4f-4b7f-ace8-e9bb82b84a11"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"68f8d7c3-dce3-4fd8-8cfb-4dd1ed31d84f"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"2bfd51c9-0339-4bd2-91c2-052d923c84c4"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"c7884b3c-aaaf-42a0-aa42-8a38b12aba0b"}},"objectType":"Table"}]
+
+expression ACCOUNT_SF_ASIA = "na29266.southeast-asia.azure.snowflakecomputing.com" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: cbec3537-5a93-4b4d-9bed-4892e0c33f9b
+
+	annotation PBI_ResultType = Text
+
+	annotation PBI_NavigationStepName = Navigation
+
+expression WAREHOUSE_SF_ASIA = "WH_PRJAPAN_QUERY" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: ac7dbf2f-be42-4094-8fc3-2857fc396db1
+
+	annotation PBI_ResultType = Text
+
+	annotation PBI_NavigationStepName = Navigation
+
+expression ROLE_SF_ASIA = "APPGRP_JP_DEVELOPERS_READ" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: d92450ee-86a1-4758-b7c3-dc26602f6c69
+
+	annotation PBI_ResultType = Text
+
+	annotation PBI_NavigationStepName = Navigation
+
+expression DATABASE_SF_ASIA = "PR_JAPAN_DEV_DB" meta [IsParameterQuery=true, List={"PR_JAPAN_PROD_DB", "PR_JAPAN_DEV_DB"}, DefaultValue="PR_JAPAN_PROD_DB", Type="Text", IsParameterQueryRequired=true]
+	lineageTag: b295d49e-60b2-420f-91f8-73365717dce8
+
+	annotation PBI_ResultType = Text
+
+	annotation PBI_NavigationStepName = Navigation
+

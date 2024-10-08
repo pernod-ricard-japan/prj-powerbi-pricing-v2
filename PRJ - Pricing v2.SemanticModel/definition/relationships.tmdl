@@ -1,0 +1,66 @@
+relationship 16df5590-04e5-419d-a8de-9e7a9a3bdd74
+	fromColumn: 'Intage Facts'.DATE
+	toColumn: Calendar.DATE
+
+relationship 7c542cff-1c76-4491-90ea-a55e2ca3f1ae
+	crossFilteringBehavior: bothDirections
+	fromColumn: 'Intage Facts'.JAN_CODE
+	toColumn: JAN.JAN_CODE
+
+relationship e9975ab5-d4f7-4d64-b18e-271126d46164
+	fromColumn: Calendar.DATE
+	toColumn: LocalDateTable_f6435cb2-26a7-4ce3-9375-8eef3878613c.Date
+
+relationship ed404296-a5d7-4eee-b1d1-66e3c7e77bd5
+	fromColumn: Calendar.END_OF_MONTH
+	toColumn: LocalDateTable_3129bc54-fe13-41f0-9de8-96e85d079553.Date
+
+relationship ae35609e-4084-49e8-9917-b6a4f6c1a4cf
+	crossFilteringBehavior: bothDirections
+	fromColumn: JAN.BQ_CODE
+	toColumn: 'Brand Quality'.BQ_CODE
+
+relationship 55d7e490-42f2-4423-8fcd-a406300d57ad
+	fromColumn: 'Brand Quality'.BRAND_CODE
+	toColumn: Brand.BRAND_CODE
+
+relationship 3dc988eb-2804-4214-a720-82dfa305ecbc
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'RSP per BQ'.DATE
+	toColumn: LocalDateTable_407165de-618a-4063-914f-4391b873abde.Date
+
+relationship a0723611-3326-75d6-763e-2a9e4f777b96
+	securityFilteringBehavior: none
+	fromColumn: 'RSP per BQ'.BQ_CODE
+	toColumn: 'Brand Quality'.BQ_CODE
+
+relationship d66f3179-38a1-49c1-8cb5-76d484cf28cf
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Price Index Master'.'Effective date'
+	toColumn: LocalDateTable_6f5c8e67-9acc-413e-b2f3-0820b06a0821.Date
+
+relationship 1c1cc2f3-e8b4-7d4c-1d97-944ca5b1af9a
+	crossFilteringBehavior: bothDirections
+	securityFilteringBehavior: none
+	fromCardinality: one
+	fromColumn: 'Price Index Master'.BQ_Code_Baseline
+	toColumn: 'Brand Quality'.BQ_CODE
+
+relationship 94b5fe4b-1318-1a9d-8adf-a4aaea136f24
+	isActive: false
+	fromColumn: 'RSP per BQ'.BQ_CODE
+	toColumn: 'Price Index Master'.BQ_Code_Baseline
+
+relationship 88673b2e-6998-cb56-7edd-53195116a5b6
+	isActive: false
+	securityFilteringBehavior: none
+	fromColumn: 'Price Index Master'.BQ_Code_Benchmark
+	toColumn: 'Brand Quality'.BQ_CODE
+
+relationship 7819edc3-268e-46ed-24b8-e9a23f86c369
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: 'Price Index Master'.BQ_Code_Benchmark
+	toColumn: 'RSP per BQ'.BQ_CODE
+

@@ -21,10 +21,10 @@ table 'Price Index Master'
 		dataType: int64
 		formatString: 0
 		lineageTag: 4e9d9d1f-24b2-4708-b6dc-367c99939027
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Index
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	column BQ_Code_Benchmark
 		dataType: string

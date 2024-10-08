@@ -1,0 +1,258 @@
+table 'Intage Facts'
+	lineageTag: b2760d26-24cf-4308-abdb-fa4823f742cd
+	sourceLineageTag: 3d2f0883-83dd-48cb-b910-cfe2d12d804b
+
+	column DATE
+		dataType: dateTime
+		formatString: mmmm yyyy
+		lineageTag: 74be4194-5a67-458e-8a94-f37279be824a
+		sourceLineageTag: 265d118c-a4c8-4e55-8a03-c5188c7f8a3a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DATE
+
+		annotation SummarizationSetBy = User
+
+	column SRI_AREAS
+		dataType: string
+		lineageTag: 1c617e91-dc04-4fb8-8823-a001e4db35cd
+		sourceLineageTag: 1dd3f35f-0296-42a4-b1e4-60862560a09f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SRI_AREAS
+
+		annotation SummarizationSetBy = User
+
+	column SRI_OUTLET_TYPES
+		dataType: string
+		lineageTag: f5edbc9e-b465-4b98-835e-b433c7a0285e
+		sourceLineageTag: f19232e0-486a-4beb-b211-8c07ec864d46
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: SRI_OUTLET_TYPES
+
+		annotation SummarizationSetBy = User
+
+	column MARKET_SIZE_CASE_9LITERS
+		dataType: double
+		lineageTag: daf6165d-f304-45dd-8740-b15e8b78e776
+		sourceLineageTag: 432ae014-c7da-4f17-b3d1-de530c4332d4
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: MARKET_SIZE_CASE_9LITERS
+
+		annotation SummarizationSetBy = User
+
+	column MARKET_SIZE_VALUE
+		dataType: double
+		lineageTag: a2654ea4-572e-42b2-9948-23fec6ea1a3e
+		sourceLineageTag: 0c57ca5a-0f4c-4826-b224-192bf4932112
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: MARKET_SIZE_VALUE
+
+		annotation SummarizationSetBy = User
+
+	column MARKET_SIZE_UNIT
+		dataType: double
+		lineageTag: 6762a2d1-6e36-4ff8-a9f4-15431ad331f3
+		sourceLineageTag: 0594b30d-566b-49f6-8d14-2958b311b8be
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: MARKET_SIZE_UNIT
+
+		annotation SummarizationSetBy = User
+
+	column VALUE_ROLLING_1M
+		dataType: double
+		lineageTag: fc0eb2f3-a1dd-4346-aee9-3fad95da73a4
+		sourceLineageTag: 68df65ea-79d4-4f79-9581-8350535e6418
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: VALUE_ROLLING_1M
+
+		annotation SummarizationSetBy = User
+
+	column UNIT_ROLLING_1M
+		dataType: double
+		lineageTag: 6cf2d518-eb99-4e1a-9dc1-cf89e85201ea
+		sourceLineageTag: 8a6149b9-6065-4b19-b6a9-216e98e2afe9
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: UNIT_ROLLING_1M
+
+		annotation SummarizationSetBy = User
+
+	/// Rolling 1 Months of volume in C9L
+	column CASE_9LITERS_ROLLING_1M
+		dataType: double
+		formatString: #,0
+		lineageTag: c213de8b-1486-48b1-a9cf-82f7952fa07b
+		sourceLineageTag: 0db065f2-4b66-4ea8-8dcc-3e4ce4989e95
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CASE_9LITERS_ROLLING_1M
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column VALUE_ROLLING_3M
+		dataType: double
+		formatString: #,0
+		lineageTag: fa62d8ad-1f44-4619-90fd-30b472f04e38
+		sourceLineageTag: f3b1789c-e071-4e2d-ab26-5c572dd6a955
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: VALUE_ROLLING_3M
+
+		annotation SummarizationSetBy = User
+
+	column UNIT_ROLLING_3M
+		dataType: double
+		lineageTag: a79e6f1c-9c3d-4864-b2cc-002d71228d65
+		sourceLineageTag: cbba9885-c162-474f-bed6-c2fdb886430e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: UNIT_ROLLING_3M
+
+		annotation SummarizationSetBy = User
+
+	/// Rolling 3 Months of volume in C9L
+	column CASE_9LITERS_ROLLING_3M
+		dataType: double
+		formatString: 0
+		lineageTag: cdbf8521-01dd-4290-a24a-11b6a885ba9e
+		sourceLineageTag: ef978e1d-d9ff-416b-9486-7153f454c219
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CASE_9LITERS_ROLLING_3M
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column VALUE_ROLLING_12M
+		dataType: double
+		lineageTag: 3a248726-9544-48b4-b4bd-0678706927f1
+		sourceLineageTag: 622c275b-4c83-493d-9499-4ec7f119c590
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: VALUE_ROLLING_12M
+
+		annotation SummarizationSetBy = User
+
+	column UNIT_ROLLING_12M
+		dataType: double
+		lineageTag: 2692aa32-f6fb-47a7-89d1-8d7d8b364e29
+		sourceLineageTag: 4039123f-374e-4c93-930b-b541ffd75f6e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: UNIT_ROLLING_12M
+
+		annotation SummarizationSetBy = User
+
+	/// Rolling 12 Months of volume in C9L
+	column CASE_9LITERS_ROLLING_12M
+		dataType: double
+		formatString: 0
+		lineageTag: 58f1aa43-4756-4ffc-9488-358d191a0292
+		sourceLineageTag: 0d142a36-c8ca-4f19-a2ff-0b47bf4dd11d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CASE_9LITERS_ROLLING_12M
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	column YEAR
+		dataType: double
+		isHidden
+		lineageTag: 0853cb68-b12e-4f80-ad41-837096ed2751
+		sourceLineageTag: 67a30557-4892-44f0-a954-28d4c2751188
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: YEAR
+
+		annotation SummarizationSetBy = User
+
+	column MONTH
+		dataType: double
+		isHidden
+		lineageTag: 6d447ef0-df51-4caa-bd7f-1f18125c9b9c
+		sourceLineageTag: 0db2a011-d290-43cf-a65a-3da8ece95e69
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: MONTH
+
+		annotation SummarizationSetBy = User
+
+	column JAN_CODE
+		dataType: string
+		lineageTag: 218b5064-fef9-4e3e-8bfb-f67d92cb7a63
+		sourceLineageTag: 28091b90-7a03-4f93-a20a-759ebe431d1c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: JAN_CODE
+
+		annotation SummarizationSetBy = User
+
+	column JAN_DESC
+		dataType: string
+		lineageTag: 04981c61-7eba-4978-8536-f56915148497
+		sourceLineageTag: 6f6fc1db-1d83-40df-8a8c-8078f7828ae4
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: JAN_DESC
+
+		annotation SummarizationSetBy = User
+
+	column VALUE_ROLLING_6M
+		dataType: double
+		lineageTag: 1d39427c-a28f-47b0-93e7-562b7f5caa16
+		sourceLineageTag: b3d90776-2c56-4126-b97c-9ff7616116db
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: VALUE_ROLLING_6M
+
+		annotation SummarizationSetBy = User
+
+	column UNIT_ROLLING_6M
+		dataType: double
+		lineageTag: 76c3536e-2c92-47f6-afa2-c44484e091b3
+		sourceLineageTag: e1e5351c-2478-4d09-a086-01ca7bf310c1
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: UNIT_ROLLING_6M
+
+		annotation SummarizationSetBy = User
+
+	/// Rolling 6 Months of volume in C9L
+	column CASE_9LITERS_ROLLING_6M
+		dataType: double
+		formatString: 0
+		lineageTag: 210b2ac3-c358-4d34-a743-06fc5162f952
+		sourceLineageTag: 4618c5fa-3908-4092-a5c8-733cfc55dc04
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: CASE_9LITERS_ROLLING_6M
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	partition 'Intage Facts' = entity
+		mode: directQuery
+		source
+			entityName: Intage Facts
+			expressionSource: 'DirectQuery to AS - PRJ - Intage'
+

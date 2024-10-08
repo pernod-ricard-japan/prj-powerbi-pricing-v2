@@ -1,0 +1,149 @@
+table 'RSP per BQ'
+	lineageTag: 1f0fdb7b-97aa-489c-8df5-aba879681849
+
+	column LVL1_CATEGORY
+		dataType: string
+		lineageTag: 2b0226bd-61eb-4754-9b26-1a97d5f808b8
+		summarizeBy: none
+		sourceColumn: LVL1_CATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	column LVL2_SEGMENT
+		dataType: string
+		lineageTag: 9f641b6f-1735-4fbd-9e66-1f7ece049a53
+		summarizeBy: none
+		sourceColumn: LVL2_SEGMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	column LVL3_TYPE
+		dataType: string
+		lineageTag: 6067c476-0161-41ed-98d9-915fd9310670
+		summarizeBy: none
+		sourceColumn: LVL3_TYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column BQ_CODE
+		dataType: string
+		lineageTag: 76e5b739-aba4-46a5-b22f-9f256fe2b428
+		summarizeBy: none
+		sourceColumn: BQ_CODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column BQ_DESC
+		dataType: string
+		lineageTag: c74e7afe-6f8c-4681-a93a-247eaacf0ccf
+		summarizeBy: none
+		sourceColumn: BQ_DESC
+
+		annotation SummarizationSetBy = Automatic
+
+	column DATE
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 43dae099-c08d-4df5-af35-c0c51a6df6a1
+		summarizeBy: none
+		sourceColumn: DATE
+
+		variation Variation
+			isDefault
+			relationship: 3dc988eb-2804-4214-a720-82dfa305ecbc
+			defaultHierarchy: LocalDateTable_407165de-618a-4063-914f-4391b873abde.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column WEIGHTED_RSP_L3M
+		dataType: double
+		lineageTag: d06e4a05-b2c8-4bf6-a8eb-b0f02c02ba3f
+		summarizeBy: sum
+		sourceColumn: WEIGHTED_RSP_L3M
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WEIGHTED_RSP_L6M
+		dataType: double
+		lineageTag: c3259802-0f0b-46ba-88d9-842dc66cccdf
+		summarizeBy: sum
+		sourceColumn: WEIGHTED_RSP_L6M
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WEIGHTED_RSP_L12M
+		dataType: double
+		lineageTag: 260c7e73-f4ee-4edf-b33b-8b09fb2ddceb
+		summarizeBy: sum
+		sourceColumn: WEIGHTED_RSP_L12M
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WEIGHTED_RSP_THIS_MONTH
+		dataType: double
+		lineageTag: 1040f65e-351d-499e-b39f-e1a041e5f05e
+		summarizeBy: sum
+		sourceColumn: WEIGHTED_RSP_THIS_MONTH
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column VOLUME_L3M
+		dataType: int64
+		formatString: 0
+		lineageTag: 780cbc7a-d486-44e9-a661-f1da40a2f0f3
+		summarizeBy: sum
+		sourceColumn: VOLUME_L3M
+
+		annotation SummarizationSetBy = Automatic
+
+	column VOLUME_L6M
+		dataType: int64
+		formatString: 0
+		lineageTag: d614cf17-7768-4613-8d02-8dcea019b212
+		summarizeBy: sum
+		sourceColumn: VOLUME_L6M
+
+		annotation SummarizationSetBy = Automatic
+
+	column VOLUME_L12M
+		dataType: int64
+		formatString: 0
+		lineageTag: 4f5f936c-88a8-4eb9-9597-e5212aea9c6c
+		summarizeBy: sum
+		sourceColumn: VOLUME_L12M
+
+		annotation SummarizationSetBy = Automatic
+
+	column VOLUME_THIS_MONTH
+		dataType: int64
+		formatString: 0
+		lineageTag: 39268dec-c135-45d8-8663-ee6e17ef07ae
+		summarizeBy: sum
+		sourceColumn: VOLUME_THIS_MONTH
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'RSP per BQ' = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\cw022146\OneDrive - PERNOD RICARD\Desktop\Github Local clpernod\prj-powerbi-pricing-v2\RSP per BQ.csv"),[Delimiter=",", Columns=14, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"LVL1_CATEGORY", type text}, {"LVL2_SEGMENT", type text}, {"LVL3_TYPE", type text}, {"BQ_CODE", type text}, {"BQ_DESC", type text}, {"DATE", type date}, {"WEIGHTED_RSP_L3M", type number}, {"WEIGHTED_RSP_L6M", type number}, {"WEIGHTED_RSP_L12M", type number}, {"WEIGHTED_RSP_THIS_MONTH", type number}, {"VOLUME_L3M", Int64.Type}, {"VOLUME_L6M", Int64.Type}, {"VOLUME_L12M", Int64.Type}, {"VOLUME_THIS_MONTH", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

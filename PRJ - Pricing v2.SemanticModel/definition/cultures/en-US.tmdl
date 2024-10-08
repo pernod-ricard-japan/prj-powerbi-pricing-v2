@@ -1,0 +1,407 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "brand_quality.bq_desc": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Brand Quality",
+			          "ConceptualProperty": "BQ_DESC"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "brand_quality.bq_code": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Brand Quality",
+			          "ConceptualProperty": "BQ_CODE"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "jan.jan_code": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "JAN",
+			          "ConceptualProperty": "JAN_CODE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "JAN Code": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rsp_per_jan_measures.jan_rsp_2024_l3m": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RSP per JAN Measures",
+			          "ConceptualProperty": "JAN_RSP_TY_L3M"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "L3M": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rsp_per_jan_measures.jan_rsp_2024_l6m": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RSP per JAN Measures",
+			          "ConceptualProperty": "JAN_RSP_TY_L6M"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "L6M": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rsp_per_jan_measures.jan_rsp_ty_l12m": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RSP per JAN Measures",
+			          "ConceptualProperty": "JAN_RSP_TY_L12M"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "L12M": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rsp_per_jan_measures.jan_rsp_ty_l1m": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RSP per JAN Measures",
+			          "ConceptualProperty": "JAN_RSP_TY_L1M"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "L1M": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rsp_per_jan_measures.rsp_comparison_percent_l1m": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RSP per JAN Measures",
+			          "ConceptualProperty": "RSP_Comparison_Percent_L1M"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "vs LY %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rsp_per_jan_measures.rsp_comparison_percent_l3m": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RSP per JAN Measures",
+			          "ConceptualProperty": "RSP_Comparison_Percent_L3M"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "vs LY %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rsp_per_jan_measures.rsp_comparison_percent_l6m": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RSP per JAN Measures",
+			          "ConceptualProperty": "RSP_Comparison_Percent_L6M"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "vs LY %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rsp_per_jan_measures.rsp_comparison_percent_l12m": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RSP per JAN Measures",
+			          "ConceptualProperty": "RSP_Comparison_Percent_L12M"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "vs LY %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "brand.brand_desc": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Brand",
+			          "ConceptualProperty": "BRAND_DESC"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Brand": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rsp_per_jan_measures.jan_vol_ty_l1m": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RSP per JAN Measures",
+			          "ConceptualProperty": "JAN_VOL_TY_L1M"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "L1M": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rsp_per_jan_measures.vol_comparison_percent_l1m": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RSP per JAN Measures",
+			          "ConceptualProperty": "VOL_Comparison_Percent_L1M"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "vs LY %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rsp_per_jan_measures.vol_comparison_percent_l3m": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RSP per JAN Measures",
+			          "ConceptualProperty": "VOL_Comparison_Percent_L3M"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "vs LY %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rsp_per_jan_measures.vol_comparison_percent_l6m": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RSP per JAN Measures",
+			          "ConceptualProperty": "VOL_Comparison_Percent_L6M"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "vs LY %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rsp_per_jan_measures.vol_comparison_percent_l12m": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RSP per JAN Measures",
+			          "ConceptualProperty": "VOL_Comparison_Percent_L12M"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "vs LY %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rsp_per_jan_measures.jan_vol_ty_l3m": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RSP per JAN Measures",
+			          "ConceptualProperty": "JAN_VOL_TY_L3M"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "L3M": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rsp_per_jan_measures.jan_vol_ty_l6m": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RSP per JAN Measures",
+			          "ConceptualProperty": "JAN_VOL_TY_L6M"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "L6M": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "rsp_per_jan_measures.jan_vol_ty_l12m": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "RSP per JAN Measures",
+			          "ConceptualProperty": "JAN_VOL_TY_L12M"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "L12M": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

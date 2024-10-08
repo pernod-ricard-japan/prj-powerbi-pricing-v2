@@ -1,0 +1,313 @@
+table 'RSP per JAN Measures'
+	lineageTag: c28498c6-b6fe-4e4d-a2f8-426c357e8ea8
+
+	measure JAN_RSP_TY_L3M = ```
+			
+			VAR marketunit = CALCULATE(SUM('Intage Facts'[UNIT_ROLLING_3M]))
+			VAR marketvalue = CALCULATE(SUM('Intage Facts'[VALUE_ROLLING_3M]))
+			RETURN DIVIDE(marketvalue, marketunit, 0)
+			
+			```
+		formatString: "¥"#,0.0;-"¥"#,0.0;"¥"#,0.0
+		lineageTag: 3d2ed099-ab0c-477c-a0ae-80805df83d00
+
+		annotation PBI_FormatHint = {"currencyCulture":"ja-JP"}
+
+	measure JAN_RSP_TY_L6M =
+			
+			VAR marketunit = CALCULATE(SUM('Intage Facts'[UNIT_ROLLING_6M]))
+			VAR marketvalue = CALCULATE(SUM('Intage Facts'[VALUE_ROLLING_6M]))
+			RETURN DIVIDE(marketvalue, marketunit, 0)
+		formatString: "¥"#,0.0;-"¥"#,0.0;"¥"#,0.0
+		lineageTag: fb1077c6-91b0-4096-81bd-4723e4f7aee3
+
+		annotation PBI_FormatHint = {"currencyCulture":"ja-JP"}
+
+	measure JAN_RSP_TY_L12M =
+			
+			VAR marketunit = CALCULATE(SUM('Intage Facts'[UNIT_ROLLING_12M]))
+			VAR marketvalue = CALCULATE(SUM('Intage Facts'[VALUE_ROLLING_12M]))
+			RETURN DIVIDE(marketvalue, marketunit, 0)
+		formatString: "¥"#,0.0;-"¥"#,0.0;"¥"#,0.0
+		lineageTag: 0b18fa8c-bc60-4844-b408-15cceeaa1346
+
+		annotation PBI_FormatHint = {"currencyCulture":"ja-JP"}
+
+	measure JAN_RSP_TY_L1M =
+			
+			VAR marketunit = CALCULATE(SUM('Intage Facts'[UNIT_ROLLING_1M]))
+			VAR marketvalue = CALCULATE(SUM('Intage Facts'[VALUE_ROLLING_1M]))
+			RETURN DIVIDE(marketvalue, marketunit, 0)
+		formatString: "¥"#,0.0;-"¥"#,0.0;"¥"#,0.0
+		lineageTag: e886c1a1-3abf-4778-b5e2-a1ba51ff46c6
+
+		annotation PBI_FormatHint = {"currencyCulture":"ja-JP"}
+
+	measure JAN_RSP_LY_L1M = ```
+			
+			VAR marketunit_ly = CALCULATE(
+			    SUM('Intage Facts'[UNIT_ROLLING_1M]),
+			    SAMEPERIODLASTYEAR('Calendar'[Date])
+			)
+			VAR marketvalue_ly = CALCULATE(
+			    SUM('Intage Facts'[VALUE_ROLLING_1M]),
+			    SAMEPERIODLASTYEAR('Calendar'[Date])
+			)
+			RETURN DIVIDE(marketvalue_ly, marketunit_ly, 0)
+			
+			```
+		lineageTag: 709319ec-de81-480e-ad52-79b4989cf016
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure JAN_RSP_LY_L3M = ```
+			
+			VAR marketunit_ly = CALCULATE(
+			    SUM('Intage Facts'[UNIT_ROLLING_3M]),
+			    SAMEPERIODLASTYEAR('Calendar'[Date])
+			)
+			VAR marketvalue_ly = CALCULATE(
+			    SUM('Intage Facts'[VALUE_ROLLING_3M]),
+			    SAMEPERIODLASTYEAR('Calendar'[Date])
+			)
+			RETURN DIVIDE(marketvalue_ly, marketunit_ly, 0)
+			
+			```
+		lineageTag: 41b5ab7b-2c9f-40a0-8a2c-18ad59e8a589
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure JAN_RSP_LY_L6M = ```
+			
+			VAR marketunit_ly = CALCULATE(
+			    SUM('Intage Facts'[UNIT_ROLLING_6M]),
+			    SAMEPERIODLASTYEAR('Calendar'[Date])
+			)
+			VAR marketvalue_ly = CALCULATE(
+			    SUM('Intage Facts'[VALUE_ROLLING_6M]),
+			    SAMEPERIODLASTYEAR('Calendar'[Date])
+			)
+			RETURN DIVIDE(marketvalue_ly, marketunit_ly, 0)
+			
+			```
+		lineageTag: 1eeccb76-9166-48c4-a1e4-a5d9d7adebbd
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure JAN_RSP_LY_L12M = ```
+			
+			VAR marketunit_ly = CALCULATE(
+			    SUM('Intage Facts'[UNIT_ROLLING_12M]),
+			    SAMEPERIODLASTYEAR('Calendar'[Date])
+			)
+			VAR marketvalue_ly = CALCULATE(
+			    SUM('Intage Facts'[VALUE_ROLLING_12M]),
+			    SAMEPERIODLASTYEAR('Calendar'[Date])
+			)
+			RETURN DIVIDE(marketvalue_ly, marketunit_ly, 0)
+			
+			```
+		lineageTag: eeb71476-9f19-4d77-88c0-2a4e9739c56d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure RSP_Comparison_Percent_L1M = ```
+			
+			VAR RSP_TY = [JAN_RSP_TY_L1M]
+			VAR RSP_LY = [JAN_RSP_LY_L1M]
+			RETURN 
+			    IF(
+			        RSP_LY = 0,
+			        BLANK(),
+			        DIVIDE(RSP_TY - RSP_LY, RSP_LY, 0)
+			    )
+			
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 43f04370-1982-4bc2-813c-f3470352ae1a
+
+	measure RSP_Comparison_Percent_L3M = ```
+			
+			VAR RSP_TY = [JAN_RSP_TY_L3M]
+			VAR RSP_LY = [JAN_RSP_LY_L3M]
+			RETURN 
+			    IF(
+			        RSP_LY = 0,
+			        BLANK(),
+			        DIVIDE(RSP_TY - RSP_LY, RSP_LY, 0)
+			    )
+			
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 18a985bd-59fa-4966-bb78-55d04a8322a3
+
+	measure RSP_Comparison_Percent_L6M = ```
+			
+			VAR RSP_TY = [JAN_RSP_TY_L6M]
+			VAR RSP_LY = [JAN_RSP_LY_L6M]
+			RETURN 
+			    IF(
+			        RSP_LY = 0,
+			        BLANK(),
+			        DIVIDE(RSP_TY - RSP_LY, RSP_LY, 0)
+			    )
+			
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: fec41eb1-e1f6-41f5-97aa-5b9f94426b9c
+
+	measure RSP_Comparison_Percent_L12M = ```
+			
+			VAR RSP_TY = [JAN_RSP_TY_L12M]
+			VAR RSP_LY = [JAN_RSP_LY_L12M]
+			RETURN 
+			    IF(
+			        RSP_LY = 0,
+			        BLANK(),
+			        DIVIDE(RSP_TY - RSP_LY, RSP_LY, 0)
+			    )
+			
+			```
+		formatString: #,0.0%;-#,0.0%;#,0.0%
+		lineageTag: af6034b3-12ed-4f27-9ecf-e8cef29d59a8
+
+	measure JAN_VOL_LY_L1M = ```
+			CALCULATE(
+			    SUM('Intage Facts'[CASE_9LITERS_ROLLING_1M]),
+			    SAMEPERIODLASTYEAR('Calendar'[Date])
+			)
+			
+			```
+		lineageTag: 22e018b8-a8bd-4718-b0f6-26af32f5fc85
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure JAN_VOL_LY_L3M =
+			CALCULATE(
+			    SUM('Intage Facts'[CASE_9LITERS_ROLLING_3M]),
+			    SAMEPERIODLASTYEAR('Calendar'[Date])
+			)
+		lineageTag: a0f9547d-3230-4058-80ba-e99793ec5986
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure JAN_VOL_LY_L6M =
+			CALCULATE(
+			    SUM('Intage Facts'[CASE_9LITERS_ROLLING_6M]),
+			    SAMEPERIODLASTYEAR('Calendar'[Date])
+			)
+		lineageTag: 644ecf00-e727-4044-a810-b672eae48d78
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure JAN_VOL_LY_L12M =
+			CALCULATE(
+			    SUM('Intage Facts'[CASE_9LITERS_ROLLING_12M]),
+			    SAMEPERIODLASTYEAR('Calendar'[Date])
+			)
+		lineageTag: 4b9fbf12-03fa-4575-911c-084ffa26b153
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure VOL_Comparison_Percent_L1M = ```
+			
+			IF(
+			    [JAN_VOL_LY_L1M] <> 0,
+			    DIVIDE([JAN_VOL_TY_L1M], [JAN_VOL_LY_L1M], 0) - 1,
+			    BLANK() 
+			)
+			
+			```
+		formatString: 0%;-0%;0%
+		lineageTag: 4e921ab5-48da-4293-ba5f-2758d9458f22
+
+	measure JAN_VOL_TY_L1M = ```
+			CALCULATE(
+			    SUM('Intage Facts'[CASE_9LITERS_ROLLING_1M])
+			)
+			
+			```
+		formatString: #,0
+		lineageTag: 9a03e204-c27b-4fd0-928f-4b71af88b938
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure JAN_VOL_TY_L12M = ```
+			CALCULATE(
+			    SUM('Intage Facts'[CASE_9LITERS_ROLLING_12M])
+			)
+			
+			```
+		formatString: #,0
+		lineageTag: 5f355bc7-519d-47a9-b0bb-e8cf1e06965b
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure JAN_VOL_TY_L3M = ```
+			CALCULATE(
+			    SUM('Intage Facts'[CASE_9LITERS_ROLLING_3M])
+			)
+			
+			```
+		formatString: #,0
+		lineageTag: bdf3078a-d980-448e-9acc-874f565a1f3c
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure JAN_VOL_TY_L6M = ```
+			CALCULATE(
+			    SUM('Intage Facts'[CASE_9LITERS_ROLLING_6M])
+			)
+			
+			```
+		formatString: #,0
+		lineageTag: 13873b47-3ab7-42c0-8f87-0f71d99718e8
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure VOL_Comparison_Percent_L3M = ```
+			
+			IF(
+			    [JAN_VOL_LY_L3M] <> 0,
+			    DIVIDE([JAN_VOL_TY_L3M], [JAN_VOL_LY_L3M], 0) - 1,
+			    BLANK() 
+			)
+			```
+		formatString: 0%;-0%;0%
+		lineageTag: 2d982e9d-3b49-4b27-980d-6b00ac61c60e
+
+	measure VOL_Comparison_Percent_L6M = ```
+			
+			IF(
+			    [JAN_VOL_LY_L6M] <> 0,
+			    DIVIDE([JAN_VOL_TY_L6M], [JAN_VOL_LY_L6M], 0) - 1,
+			    BLANK() 
+			)
+			```
+		formatString: 0%;-0%;0%
+		lineageTag: 8814303e-6e3a-4b44-bb22-0c3db6324ba5
+
+	measure VOL_Comparison_Percent_L12M = ```
+			IF(
+			    [JAN_VOL_LY_L12M] <> 0,
+			    DIVIDE([JAN_VOL_TY_L12M], [JAN_VOL_LY_L12M], 0) - 1,
+			    BLANK() 
+			)
+			```
+		formatString: 0%;-0%;0%
+		lineageTag: 704f11ba-40f2-4c2a-bb56-3fbb83684c08
+
+	partition 'RSP per JAN Measures' = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

@@ -1,0 +1,214 @@
+table Calendar
+	lineageTag: 3e812f4c-dfc0-4dac-9cd3-436616c02a87
+	sourceLineageTag: 1562c79f-c9a0-4d16-b831-d5c72dd10f8b
+
+	column DATE
+		dataType: dateTime
+		isNullable: false
+		formatString: mmmm yyyy
+		lineageTag: 43f9c014-7313-43e3-9884-3458e4cc8750
+		sourceLineageTag: f419fe6c-b484-4902-8a90-64a7126c6bda
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DATE
+
+		variation Variation
+			isDefault
+			relationship: e9975ab5-d4f7-4d64-b18e-271126d46164
+			defaultHierarchy: LocalDateTable_f6435cb2-26a7-4ce3-9375-8eef3878613c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = User
+
+	column YEAR
+		dataType: double
+		lineageTag: dd122847-9512-46d4-88b9-2ce740c5c1f2
+		sourceLineageTag: cfe5339d-74b5-4f7d-ba54-8a520cff5750
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: YEAR
+
+		annotation SummarizationSetBy = User
+
+	column MONTH
+		dataType: double
+		lineageTag: 178a7a6a-1cbf-490e-a42b-71e02517b2a6
+		sourceLineageTag: b92ba201-dc2b-42c1-91fc-d32562c2ccf7
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: MONTH
+
+		annotation SummarizationSetBy = User
+
+	column MONTH_NAME
+		dataType: string
+		lineageTag: 7de7bfee-30a8-42bc-bdc0-e2719d372cd1
+		sourceLineageTag: 8d42ad81-994b-46ef-9f7e-790ef4af4768
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: MONTH_NAME
+		sortByColumn: MONTH
+
+		annotation SummarizationSetBy = User
+
+	column DAY_OF_MON
+		dataType: double
+		lineageTag: a4e41541-7389-4a8d-903f-e92564487fb9
+		sourceLineageTag: 8955e6b7-1060-4789-8798-002db17ad74e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: DAY_OF_MON
+
+		annotation SummarizationSetBy = User
+
+	column DAY_OF_WEEK
+		dataType: double
+		lineageTag: 36e71cd2-3565-4688-a71b-6f6fae5624d6
+		sourceLineageTag: 3675ac0a-1acb-4039-af9e-975ada2363d9
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: DAY_OF_WEEK
+
+		annotation SummarizationSetBy = User
+
+	column WEEK_OF_YEAR
+		dataType: double
+		lineageTag: 34870715-8cc6-4f1a-b7c5-a5e30cd674e2
+		sourceLineageTag: 0bc75d1a-660d-470d-8002-98a984eadeb3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: WEEK_OF_YEAR
+
+		annotation SummarizationSetBy = User
+
+	column DAY_OF_YEAR
+		dataType: double
+		lineageTag: f37756a5-eb34-44ed-9119-1065d528d112
+		sourceLineageTag: 050230e2-68dc-4bd3-8290-4e24af6aac38
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: DAY_OF_YEAR
+
+		annotation SummarizationSetBy = User
+
+	column YEAR_MONTH
+		dataType: string
+		lineageTag: c512de82-f0e1-4f31-8baa-be4cba3774e4
+		sourceLineageTag: 1a484cb3-3c97-4a20-ae95-23cf9a461c1c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: YEAR_MONTH
+
+		annotation SummarizationSetBy = User
+
+	column QUARTER
+		dataType: double
+		lineageTag: 98b60531-58b5-4185-9552-735d4656c452
+		sourceLineageTag: b54d4ab0-7f57-40ed-80f6-6b574664ef81
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: QUARTER
+
+		annotation SummarizationSetBy = User
+
+	column YEAR_MONTH_NAME
+		dataType: string
+		lineageTag: a5c36a5b-4be4-46d2-8c72-1cb128e0989e
+		sourceLineageTag: 34f7be71-6341-40b2-b1f3-e91312cbd3f2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: YEAR_MONTH_NAME
+
+		annotation SummarizationSetBy = User
+
+	column YEAR_QUARTER
+		dataType: string
+		lineageTag: 54d82ad3-9db7-47ca-b13d-e4209f15c83b
+		sourceLineageTag: 6d831329-3184-4047-8eaa-feb21d05cc16
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: YEAR_QUARTER
+
+		annotation SummarizationSetBy = User
+
+	column END_OF_MONTH
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5adbbfa2-6007-4722-b18a-b59bffb43668
+		sourceLineageTag: a7f87ffa-6fc6-48c7-80a1-d6b0b37a5e62
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: END_OF_MONTH
+
+		variation Variation
+			isDefault
+			relationship: ed404296-a5d7-4eee-b1d1-66e3c7e77bd5
+			defaultHierarchy: LocalDateTable_3129bc54-fe13-41f0-9de8-96e85d079553.'Date Hierarchy'
+
+		annotation SummarizationSetBy = User
+
+	column FISCAL_YEAR
+		dataType: double
+		lineageTag: 54742140-94d8-4d61-b8e2-ab74d3fe18c2
+		sourceLineageTag: ea71887b-8f56-4f08-9936-2213fc4ad3f7
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FISCAL_YEAR
+
+		annotation SummarizationSetBy = User
+
+	column FISCAL_MONTH
+		dataType: double
+		lineageTag: 0d00374f-d789-42d7-be6a-484a3e382c9c
+		sourceLineageTag: 0a98be94-f25b-4439-8a28-99d2449f4491
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FISCAL_MONTH
+
+		annotation SummarizationSetBy = User
+
+	column FISCAL_MONTH_NAME
+		dataType: string
+		lineageTag: 2bbf262f-b2cd-45b1-b1f1-d3ee1385a484
+		sourceLineageTag: 2c0fd33a-60b8-4561-9073-26ec2891bdb9
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: FISCAL_MONTH_NAME
+
+		annotation SummarizationSetBy = User
+
+	column FISCAL_QUARTER
+		dataType: double
+		lineageTag: ac0a5ff7-c2b7-4890-ab43-d3764153af00
+		sourceLineageTag: 26f51cb9-b0b4-4a97-b5c8-902abdb6546c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: FISCAL_QUARTER
+
+		annotation SummarizationSetBy = User
+
+	column FISCAL_YEAR_MONTH
+		dataType: string
+		lineageTag: 4bd01fd9-6157-4dba-a440-9ddbe29eef7d
+		sourceLineageTag: a9a8787f-e3fc-44c2-a1e5-028263705815
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: FISCAL_YEAR_MONTH
+
+		annotation SummarizationSetBy = User
+
+	column FISCAL_YEAR_QUARTER
+		dataType: string
+		lineageTag: 21a68458-c6bf-4cad-a701-8ab6821c9ae3
+		sourceLineageTag: b100238d-2145-4064-99d7-8b10113baaad
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: FISCAL_YEAR_QUARTER
+
+		annotation SummarizationSetBy = User
+
+	partition Calendar = entity
+		mode: directQuery
+		source
+			entityName: Calendar
+			expressionSource: 'DirectQuery to AS - PRJ - Intage'
+

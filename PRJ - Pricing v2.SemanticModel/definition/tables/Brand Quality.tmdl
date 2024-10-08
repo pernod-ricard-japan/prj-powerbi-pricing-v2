@@ -1,0 +1,161 @@
+table 'Brand Quality'
+	lineageTag: 10a7bcc0-1294-4430-bb49-d70836b550be
+	sourceLineageTag: 782757ff-226b-44ac-8d4e-86f14bf80d5f
+
+	column BQ_CODE
+		dataType: string
+		isNullable: false
+		lineageTag: 16e3dda8-b10c-4b32-869b-a3e5347068f0
+		sourceLineageTag: d3fa6657-fc02-4d1d-b7cc-682a1b705329
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: BQ_CODE
+
+		annotation SummarizationSetBy = User
+
+	column BQ_DESC
+		dataType: string
+		lineageTag: c6c4e9da-6dc9-4d19-9045-9e5d4b6d3cee
+		sourceLineageTag: 9f53e6ca-e158-4a0f-be0d-8233f9841075
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: BQ_DESC
+
+		annotation SummarizationSetBy = User
+
+	column BQ_DESC_JP
+		dataType: string
+		lineageTag: 9ef64a62-c92d-4732-9082-b2eac36644c4
+		sourceLineageTag: e58a1a44-e742-4052-9281-31eac26b3a33
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: BQ_DESC_JP
+
+		annotation SummarizationSetBy = User
+
+	column BRAND_CODE
+		dataType: string
+		lineageTag: 3f4fae60-3340-487d-b058-c85acddfeff3
+		sourceLineageTag: cbb13d50-cbef-4695-91b9-ea2c3a851e47
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: BRAND_CODE
+
+		annotation SummarizationSetBy = User
+
+	column PRICE_RANGE
+		dataType: string
+		lineageTag: 9d4228d0-f0e2-404e-9aa7-1ffc35110b4e
+		sourceLineageTag: 38efceed-0f94-4e42-9224-c91fda500d25
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PRICE_RANGE
+
+		annotation SummarizationSetBy = User
+
+	column LVL1_CATEGORY
+		dataType: string
+		lineageTag: 9b8ed78d-a91a-48ab-8a42-23d82104511b
+		sourceLineageTag: 2b0d3677-902f-485d-8705-71fe97cf636f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: LVL1_CATEGORY
+
+		annotation SummarizationSetBy = User
+
+	column LVL2_SEGMENT
+		dataType: string
+		lineageTag: d7a0a6d6-f60a-4cd1-9f6c-91abb38aac47
+		sourceLineageTag: cb3f6d04-657c-4a0e-9434-9f2824a49762
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: LVL2_SEGMENT
+
+		annotation SummarizationSetBy = User
+
+	column LVL3_TYPE
+		dataType: string
+		lineageTag: 6b92168d-2d25-4376-8c62-832ccf40a3a1
+		sourceLineageTag: 436bcba6-2ae7-4e49-ad55-3db892ce8c0c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: LVL3_TYPE
+
+		annotation SummarizationSetBy = User
+
+	column DISTRIBUTOR
+		dataType: string
+		lineageTag: 6a4a9235-dc1d-4a94-b8dd-c7a062842a09
+		sourceLineageTag: 726c1f47-3472-474d-a16c-8d3d5d073548
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DISTRIBUTOR
+
+		annotation SummarizationSetBy = User
+
+	column COUNTRY_OF_ORIGIN
+		dataType: string
+		lineageTag: d0056a66-b50b-41b4-8b0b-c276d32190b1
+		sourceLineageTag: b1d5d464-feb2-4ec9-880b-fdbb55edcd0e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: COUNTRY_OF_ORIGIN
+
+		annotation SummarizationSetBy = User
+
+	column Battleground
+		dataType: string
+		lineageTag: 0a07b688-9b76-4082-b144-689ef5a9aa0a
+		sourceLineageTag: a7f0a3e2-22c2-47e9-a61c-7a0c6cd3ce10
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Battleground
+
+		annotation SummarizationSetBy = User
+
+	column 'PRJ - Others'
+		dataType: string
+		lineageTag: 312cd6a4-1f24-4fce-8b65-a396024ed8f5
+		sourceLineageTag: 14898749-66b3-4dd5-9e92-4be786dddbb7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: PRJ - Others
+
+		annotation SummarizationSetBy = User
+
+	column 'Marketing Battleground'
+		dataType: string
+		lineageTag: 35c8d9c0-e42d-401a-a3be-2210ef76624f
+		sourceLineageTag: b21e99a1-1ccb-4a52-a40e-609694d12aba
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Marketing Battleground
+
+		annotation SummarizationSetBy = User
+
+	column 'DISTRIBUTOR (groups)'
+		dataType: string
+		lineageTag: 723a4209-4e0b-476b-885b-edc4aca4bcac
+		sourceLineageTag: d8cd20b3-bbfe-4146-8983-ddce3461b159
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: DISTRIBUTOR (groups)
+
+		annotation SummarizationSetBy = User
+
+	column 'LVL3_TYPE (groups)'
+		dataType: string
+		lineageTag: 164c16ed-4de4-4fe2-b6c4-000e5a90ddce
+		sourceLineageTag: f476ed4a-091e-43a1-aa86-e230a7ea0bc0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: LVL3_TYPE (groups)
+
+		annotation SummarizationSetBy = User
+
+	partition 'Brand Quality' = entity
+		mode: directQuery
+		source
+			entityName: Brand Quality
+			expressionSource: 'DirectQuery to AS - PRJ - Intage'
+
