@@ -1,6 +1,6 @@
 expression 'DirectQuery to AS - PRJ - Intage' =
 		let
-		    Source = AnalysisServices.Database("powerbi://api.powerbi.com/v1.0/myorg/PR%20Japan%20-%20Marketing%20%28DEV%29", "PRJ - Intage"),
+		    Source = AnalysisServices.Database("powerbi://api.powerbi.com/v1.0/myorg/PR%20Japan%20-%20Marketing%20%28TEST%29", "PRJ - Intage"),
 		    Cubes = Table.Combine(Source[Data]),
 		    Cube = Cubes{[Id="Model", Kind="Cube"]}[Data]
 		in

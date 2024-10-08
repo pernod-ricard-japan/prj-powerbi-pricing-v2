@@ -218,7 +218,7 @@ table 'RSP per JAN Measures'
 			)
 			
 			```
-		formatString: 0%;-0%;0%
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 4e921ab5-48da-4293-ba5f-2758d9458f22
 
 	measure JAN_VOL_TY_L1M = ```
@@ -273,7 +273,7 @@ table 'RSP per JAN Measures'
 			    BLANK() 
 			)
 			```
-		formatString: 0%;-0%;0%
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 2d982e9d-3b49-4b27-980d-6b00ac61c60e
 
 	measure VOL_Comparison_Percent_L6M = ```
@@ -284,7 +284,7 @@ table 'RSP per JAN Measures'
 			    BLANK() 
 			)
 			```
-		formatString: 0%;-0%;0%
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 8814303e-6e3a-4b44-bb22-0c3db6324ba5
 
 	measure VOL_Comparison_Percent_L12M = ```
@@ -294,7 +294,7 @@ table 'RSP per JAN Measures'
 			    BLANK() 
 			)
 			```
-		formatString: 0%;-0%;0%
+		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 704f11ba-40f2-4c2a-bb56-3fbb83684c08
 
 	partition 'RSP per JAN Measures' = m
